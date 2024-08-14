@@ -24,10 +24,24 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.runtime)
+            implementation(libs.kotlinx.datetime)
+            implementation(libs.koin.core)
+        }
+        androidMain.dependencies {
+            implementation(libs.ktor.client.android)
+            implementation(libs.android.driver)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+            implementation(libs.native.driver)
         }
     }
 }
