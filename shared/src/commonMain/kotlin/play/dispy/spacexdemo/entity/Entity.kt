@@ -1,5 +1,6 @@
 package play.dispy.spacexdemo.entity
 
+import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
@@ -21,7 +22,7 @@ data class RocketLaunch(
     @SerialName("links")
     val links: Links
 ) {
-    var launchYear = launchDateUTC.toInstant().toLocalDateTime(TimeZone.UTC).year
+    var launchYear = Instant.parse(launchDateUTC).toLocalDateTime(TimeZone.UTC).year
 }
 
 @Serializable
