@@ -7,11 +7,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             listView()
-            .navigationBarTitle("SpaceX Launches")
-            .navigationBarItems(trailing:
-                Button("Reload") {
-                    self.viewModel.loadLaunches(forceReload: true)
-            })
+                .navigationBarTitle(Greeting().getToday())
+                .navigationBarItems(
+                    trailing: Button("Reload") {
+                        self.viewModel.loadLaunches(forceReload: true)
+                    }
+                )
         }
     }
 

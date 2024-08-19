@@ -45,7 +45,7 @@ fun App() {
             topBar = {
                 TopAppBar(title = {
                     Text(
-                        "SpaceX Launches",
+                        Greeting().getToday(),
                         style = MaterialTheme.typography.headlineLarge
                     )
                 })
