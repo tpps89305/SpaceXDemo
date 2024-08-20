@@ -36,7 +36,7 @@ fun App() {
     val state by remember { viewModel.state }
     val pullToRefreshState = rememberPullToRefreshState()
     if (pullToRefreshState.isRefreshing) {
-        viewModel.loadLaunches()
+        viewModel.loadLaunches(forceReload = true)
         pullToRefreshState.endRefresh()
     }
 
